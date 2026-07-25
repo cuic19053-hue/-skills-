@@ -1,7 +1,7 @@
 # 大学生申报书/申请书 Agent Skills 集合
 
 [![Agent Skills](https://img.shields.io/badge/Agent_Skills-Compatible-6e3bf0)](https://agentskills.io/specification)
-[![Platform](https://img.shields.io/badge/Platform-WorkBuddy_|_Claude_Code_|_Codex_|_Cursor-blue)]()
+[![Platform](https://img.shields.io/badge/Platform-WorkBuddy_|_Trae_|_Claude_Code_|_Codex_|_Cursor_|_Windsurf-blue)]()
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 [![Stars](https://img.shields.io/github/stars/cuic19053-hue/-skills-?style=social)](https://github.com/cuic19053-hue/-skills-)
 [![Subskills](https://img.shields.io/badge/Subskills-35-blue)](#能写哪些申报书)
@@ -192,11 +192,14 @@ college-application-doc/
 | 工具 | 特点 | 下载 |
 |---|---|---|
 | **WorkBuddy** | 对话生成 .docx，图文并茂 | [官网](https://workbuddy.tencent.com) |
+| **Trae** | 字节跳动出品，内置 Skills 支持 | [官网](https://www.trae.cn) |
 | **Claude Code** | 终端 AI，开发者首选 | [官网](https://claude.ai/code) |
 | **Codex** | OpenAI 出品，终端 AI | [官网](https://github.com/openai/codex) |
 | **Cursor** | AI 编辑器，内置 Skills 支持 | [官网](https://cursor.sh) |
+| **Windsurf** | Codeium 出品，AI IDE | [官网](https://codeium.com/windsurf) |
+| **Qwen Coder** | 通义千问编程助手 | [官网](https://tongyi.aliyun.com) |
 
-> 任选一个即可，推荐 WorkBuddy（零基础最友好，直接输出 Word）。
+> 任选一个即可，推荐 WorkBuddy 或 Trae（零基础最友好，直接输出 Word）。
 
 ### 2. 安装这 35 个 skills
 在工具中搜索或安装 `cuic19053-hue/-skills-`，一键装全部 35 个赛道
