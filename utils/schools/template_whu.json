@@ -1,0 +1,53 @@
+{
+  "school_name": "武汉大学",
+  "header": {
+    "enabled": true,
+    "text": "武汉大学",
+    "logo": "logos/whu_logo.png",
+    "align": "center"
+  },
+  "footer": {
+    "enabled": true,
+    "text": "武汉大学学生工作部（处）",
+    "page_number": true
+  },
+  "seal": {
+    "enabled": true,
+    "position": "left_bottom",
+    "size_cm": 4.0,
+    "transparency": 25
+  },
+  "field_mapping": {
+    "gpa": "学习成绩",
+    "rank": "专业排名",
+    "major": "专业",
+    "class": "班级",
+    "name": "姓名",
+    "student_id": "学号",
+    "college": "学院",
+    "grade": "年级",
+    "phone": "联系电话",
+    "date": "日期"
+  },
+  "fonts": {
+    "body": "宋体",
+    "heading": "黑体",
+    "title_size": "22"
+  },
+  "margins": {
+    "top_cm": 2.54,
+    "bottom_cm": 2.54,
+    "left_cm": 3.0,
+    "right_cm": 2.5
+  },
+  "signature_blocks": [
+    "申请人",
+    "辅导员",
+    "学院负责人",
+    "学校负责人"
+  ],
+  "apply_reason_chars": {
+    "min": 200,
+    "max": 220
+  }
+}

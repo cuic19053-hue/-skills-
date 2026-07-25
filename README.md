@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 [![Install](https://img.shields.io/badge/install-npx_skills_add_cuic19053--hue/-skills---black)](https://github.com/evaisse/npx-skills)
 
-一套覆盖中国大学生常见申报场景的 Agent Skills。18 个子 skill，从大创立项到入党申请书，从奖学金到保研推免，让 AI 编程助手变成你身边那个"帮学弟学妹改过几十份申报书"的学长。
+一套覆盖中国大学生常见申报场景的 Agent Skills。**35 个子 skill**，从大创立项到入党申请书，从奖学金到保研推免，从应征入伍到公派留学，让 AI 编程助手变成你身边那个"帮学弟学妹改过几十份申报书"的学长。
 
 ---
 
@@ -52,32 +52,76 @@ ChatGPT 可以帮你写，但通用模型不知道"大创"是什么、不知道�
 
 - **保研推免申请** —— 个人陈述 + 科研经历 + 推荐信
 
+### 公派留学/交流类
+
+- **CSC 国家公派留学申请书** —— 攻读博士/联合培养/访问学者等
+- **交流项目申请书** —— 校际/院际学期交换项目
+
+### 征兵/入伍类
+
+- **应征入伍申请书** —— 在校生入伍与毕业生入伍
+
+### 其他
+
+- **转专业申请** —— 校内专业转换
+- **选调生申请** —— 基层公务员选调
+- **西部计划** —— 大学生志愿服务西部
+- **优秀班集体** —— 班级集体荣誉申报
+- **优秀学生干部** —— 学生干部评优
+- **优秀毕业设计/论文** —— 毕设评优
+- **转正申请书** —— 预备党员转正
+- **入团申请书** —— 申请加入共青团
+- **互联网+红旅赛道** —— 红色之旅赛道商业计划书
+- **国家助学金** —— 家庭经济困难补助
+
 ## 项目结构
 
 ```
 college-application-doc/
 ├── SKILL.md                 # 路由入口：识别类型 -> 分流到子 skill
+├── AGENT_PROMPT.md          # Agent 使用提示词与工作流
+├── CASE_ANALYSIS.md         # 案例分析文档
+├── SUBAGENT_TEMPLATE.md     # 子代理模板
+├── index.json               # 机器可读子 skill 索引
+├── version.json             # 项目版本元数据
 ├── README.md                # 你正在看的
 ├── LICENSE                  # MIT
-├── subskills/               # 18 个子 skill，每个独立文件夹
-│   ├── innovation_research/SKILL.md      # 大创-创新训练
-│   ├── entrepreneurship_training/SKILL.md # 大创-创业训练
-│   ├── entrepreneurship_practice/SKILL.md # 大创-创业实践
-│   ├── college_research/SKILL.md         # 科研立项
-│   ├── challenge_cup/SKILL.md            # 挑战杯
-│   ├── internet_plus/SKILL.md            # 互联网+
-│   ├── national_scholarship/SKILL.md     # 国家奖学金
-│   ├── motivation_scholarship/SKILL.md   # 国家励志奖学金
-│   ├── university_scholarship/SKILL.md   # 校级奖学金
-│   ├── enterprise_scholarship/SKILL.md   # 企业奖学金
-│   ├── single_scholarship/SKILL.md       # 单项奖学金
-│   ├── outstanding_graduate/SKILL.md     # 优秀毕业生
-│   ├── outstanding_student/SKILL.md      # 优秀学生
-│   ├── civilized_student/SKILL.md        # 文明大学生
-│   ├── social_survey/SKILL.md            # 三下乡
-│   ├── party_application/SKILL.md        # 入党申请书
-│   ├── thought_report/SKILL.md           # 思想汇报
-│   └── graduate_recommendation/SKILL.md  # 保研推免
+├── subskills/               # 35 个子 skill，每个独立文件夹
+│   ├── innovation_research/SKILL.md           # 大创-创新训练
+│   ├── entrepreneurship_training/SKILL.md     # 大创-创业训练
+│   ├── entrepreneurship_practice/SKILL.md     # 大创-创业实践
+│   ├── university_research/SKILL.md           # 校级科研立项
+│   ├── college_research/SKILL.md              # 院级科研立项
+│   ├── challenge_cup/SKILL.md                 # 挑战杯
+│   ├── internet_plus/SKILL.md                 # 互联网+
+│   ├── internet_plus_red_tour/SKILL.md        # 互联网+红旅赛道
+│   ├── national_scholarship/SKILL.md          # 国家奖学金
+│   ├── motivation_scholarship/SKILL.md        # 国家励志奖学金
+│   ├── university_scholarship/SKILL.md        # 校级奖学金
+│   ├── enterprise_scholarship/SKILL.md        # 企业奖学金
+│   ├── single_scholarship/SKILL.md            # 单项奖学金
+│   ├── grant_application/SKILL.md             # 国家助学金
+│   ├── outstanding_graduate/SKILL.md          # 优秀毕业生
+│   ├── outstanding_student/SKILL.md           # 优秀学生
+│   ├── outstanding_cadre/SKILL.md             # 优秀学生干部
+│   ├── civilized_student/SKILL.md             # 文明大学生
+│   ├── class_collective/SKILL.md              # 优秀班集体
+│   ├── outstanding_thesis/SKILL.md            # 优秀毕业设计
+│   ├── social_survey/SKILL.md                 # 三下乡-社会调查
+│   ├── volunteer_teaching/SKILL.md            # 三下乡-支教
+│   ├── policy_lecture/SKILL.md                # 三下乡-政策宣讲
+│   ├── tech_service/SKILL.md                  # 三下乡-科技服务
+│   ├── western_plan/SKILL.md                  # 西部计划
+│   ├── party_application/SKILL.md             # 入党申请书
+│   ├── thought_report/SKILL.md                # 思想汇报
+│   ├── party_full_member/SKILL.md             # 转正申请书
+│   ├── youth_league_application/SKILL.md      # 入团申请书
+│   ├── graduate_recommendation/SKILL.md       # 保研推免
+│   ├── selected_graduate/SKILL.md             # 选调生申请
+│   ├── major_transfer/SKILL.md                # 转专业申请
+│   ├── military_enlistment/SKILL.md           # 应征入伍申请书
+│   ├── csc_scholarship/SKILL.md              # CSC 公派留学
+│   └── exchange_program/SKILL.md              # 交流项目申请
 ├── references/              # 共享知识库（所有子 skill 按需引用）
 │   ├── types.md             # 8 类申报书栏目结构详解
 │   ├── writing_guide.md     # 撰写规范 + 格式标准 + 信息采集清单
@@ -85,7 +129,16 @@ college-application-doc/
 │   └── pitfalls.md          # 常见错误与避坑指南
 ├── scripts/
 │   └── build_docx.py        # 生成 Word 文档的辅助脚本
+├── utils/                   # 工程化能力模块（v2.1 新增）
+│   ├── dispatcher.py        # 分流决策树（790+行）
+│   ├── docx_common.py       # 通用 docx 工具
+│   ├── school_template.py   # 学校模板管理
+│   ├── pdf_export.py        # PDF 导出
+│   ├── plagiarism_checker.py # 查重检测
+│   ├── review_simulator.py  # 评审模拟
+│   └── schools/             # 学校模板（清华/北大/浙大/武大）
 └── examples/
+    ├── demos/               # demo Word 文档（v2.1 新增）
     ├── innovation_project_example.md
     └── scholarship_example.md
 ```
@@ -121,7 +174,7 @@ college-application-doc/
 - **指令层**：Agent 匹配到对应 skill 后，才加载 SKILL.md 正文
 - **资源层**：执行过程中按需加载 references/ 中的深度文档
 
-不把 18 个 skill 全塞进上下文。
+不把 35 个 skill 全塞进上下文。
 
 ### 3. 学校差异兼容
 
@@ -142,7 +195,7 @@ college-application-doc/
 [`npx skills`](https://github.com/evaisse/npx-skills) 是 Agent Skills 生态的官方 CLI 工具（Vercel Labs 出品），一行命令搞定安装、更新、卸载。
 
 ```bash
-# 安装全部 18 个 skill（项目级，提交到 Git 可与团队共享）
+# 安装全部 35 个 skill（项目级，提交到 Git 可与团队共享）
 npx skills add cuic19053-hue/-skills-
 
 # 全局安装（所有项目都能用）

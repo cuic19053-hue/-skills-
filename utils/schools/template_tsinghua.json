@@ -1,0 +1,54 @@
+{
+  "school_name": "清华大学",
+  "header": {
+    "enabled": true,
+    "text": "清华大学",
+    "logo": "logos/tsinghua_logo.png",
+    "align": "center"
+  },
+  "footer": {
+    "enabled": true,
+    "text": "清华大学学生事务处",
+    "page_number": true
+  },
+  "seal": {
+    "enabled": true,
+    "position": "right_bottom",
+    "size_cm": 4.2,
+    "transparency": 30
+  },
+  "field_mapping": {
+    "gpa": "GPA",
+    "rank": "本专业排名",
+    "major": "专业方向",
+    "class": "行政班",
+    "name": "姓名",
+    "student_id": "学号",
+    "college": "所在院系",
+    "grade": "年级",
+    "phone": "联系电话",
+    "date": "日期"
+  },
+  "fonts": {
+    "body": "仿宋",
+    "heading": "黑体",
+    "title_size": "22"
+  },
+  "margins": {
+    "top_cm": 2.8,
+    "bottom_cm": 2.5,
+    "left_cm": 2.5,
+    "right_cm": 2.5
+  },
+  "signature_blocks": [
+    "申请人",
+    "导师",
+    "辅导员",
+    "院系负责人",
+    "学校负责人"
+  ],
+  "apply_reason_chars": {
+    "min": 180,
+    "max": 200
+  }
+}

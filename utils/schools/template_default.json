@@ -1,0 +1,53 @@
+{
+  "school_name": "默认",
+  "header": {
+    "enabled": false,
+    "text": "",
+    "logo": "",
+    "align": "center"
+  },
+  "footer": {
+    "enabled": true,
+    "text": "",
+    "page_number": true
+  },
+  "seal": {
+    "enabled": false,
+    "position": "right_bottom",
+    "size_cm": 4,
+    "transparency": 0
+  },
+  "field_mapping": {
+    "gpa": "学习成绩",
+    "rank": "排名",
+    "major": "专业",
+    "class": "班级",
+    "name": "姓名",
+    "student_id": "学号",
+    "college": "院系",
+    "grade": "年级",
+    "phone": "联系电话",
+    "date": "日期"
+  },
+  "fonts": {
+    "body": "宋体",
+    "heading": "黑体",
+    "title_size": "22"
+  },
+  "margins": {
+    "top_cm": 2.54,
+    "bottom_cm": 2.54,
+    "left_cm": 2.5,
+    "right_cm": 2.5
+  },
+  "signature_blocks": [
+    "申请人",
+    "辅导员",
+    "院系负责人",
+    "学校负责人"
+  ],
+  "apply_reason_chars": {
+    "min": 180,
+    "max": 200
+  }
+}

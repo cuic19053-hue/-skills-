@@ -1,0 +1,53 @@
+{
+  "school_name": "浙江大学",
+  "header": {
+    "enabled": true,
+    "text": "浙江大学",
+    "logo": "logos/zju_logo.png",
+    "align": "left"
+  },
+  "footer": {
+    "enabled": true,
+    "text": "浙江大学党委学生工作部",
+    "page_number": true
+  },
+  "seal": {
+    "enabled": true,
+    "position": "right_bottom",
+    "size_cm": 4.5,
+    "transparency": 20
+  },
+  "field_mapping": {
+    "gpa": "平均学分绩点",
+    "rank": "专业排名",
+    "major": "主修专业",
+    "class": "所在班级",
+    "name": "姓名",
+    "student_id": "学号",
+    "college": "学院",
+    "grade": "年级",
+    "phone": "联系方式",
+    "date": "日期"
+  },
+  "fonts": {
+    "body": "宋体",
+    "heading": "黑体",
+    "title_size": "22"
+  },
+  "margins": {
+    "top_cm": 2.5,
+    "bottom_cm": 2.5,
+    "left_cm": 2.5,
+    "right_cm": 2.5
+  },
+  "signature_blocks": [
+    "申请人",
+    "班主任",
+    "学院负责人",
+    "学校负责人"
+  ],
+  "apply_reason_chars": {
+    "min": 200,
+    "max": 220
+  }
+}

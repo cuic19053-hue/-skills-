@@ -1,0 +1,53 @@
+{
+  "school_name": "北京大学",
+  "header": {
+    "enabled": true,
+    "text": "北京大学",
+    "logo": "logos/pku_logo.png",
+    "align": "center"
+  },
+  "footer": {
+    "enabled": true,
+    "text": "北京大学学生工作部",
+    "page_number": true
+  },
+  "seal": {
+    "enabled": true,
+    "position": "center_bottom",
+    "size_cm": 4.0,
+    "transparency": 25
+  },
+  "field_mapping": {
+    "gpa": "绩点",
+    "rank": "年级排名",
+    "major": "专业",
+    "class": "班级",
+    "name": "姓名",
+    "student_id": "学号",
+    "college": "院系",
+    "grade": "年级",
+    "phone": "联系电话",
+    "date": "日期"
+  },
+  "fonts": {
+    "body": "宋体",
+    "heading": "黑体",
+    "title_size": "22"
+  },
+  "margins": {
+    "top_cm": 2.54,
+    "bottom_cm": 2.54,
+    "left_cm": 2.8,
+    "right_cm": 2.8
+  },
+  "signature_blocks": [
+    "申请人",
+    "班主任",
+    "院系负责人",
+    "学校负责人"
+  ],
+  "apply_reason_chars": {
+    "min": 230,
+    "max": 250
+  }
+}

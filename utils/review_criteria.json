@@ -1,0 +1,767 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "updated": "2025-06-15",
+    "description": "大学生申报书评审标准配置 - 覆盖 30 个子 skill 的多维度评分标准",
+    "grade_scale": {
+      "A": "优 (90-100)",
+      "B": "良 (80-89)",
+      "C": "中 (70-79)",
+      "D": "差 (<70)"
+    },
+    "global_veto": [
+      "查重率 > 30%（与网络模板 / 党政原文重复）",
+      "GPA / 综合排名不达硬门槛",
+      "存在抄袭、剽窃、伪造证明",
+      "存在违纪处分记录（除已撤销外）",
+      "字数不达最低下限（如国奖申请理由 < 180 字）",
+      "必填字段缺失（如指导教师 / 推荐人 / 学号等）",
+      "政治类文书未提必引理论（如党章 / 二十大精神）",
+      "格式严重不规范（如未使用 A4 / 字号错乱）"
+    ]
+  },
+
+  "national_scholarship": {
+    "name": "国家奖学金",
+    "max_score": 100,
+    "threshold_pass": 85,
+    "hard_gates": {
+      "gpa_rank_top": "10%",
+      "comprehensive_rank_top": "10%",
+      "required_courses_fail": false,
+      "grade_min": 2,
+      "grade_max": 5,
+      "no_discipline_record": true
+    },
+    "dimensions": [
+      {"name": "思想品德", "weight": 15, "max": 15, "criteria": "政治立场坚定、积极参与思政活动、群众基础好；入党/入团积极分子加分"},
+      {"name": "学业表现", "weight": 40, "max": 40, "criteria": "GPA 排名前 10% 满分；前 3% 加分；必修课无不及格；外语/计算机等级加分"},
+      {"name": "创新能力", "weight": 20, "max": 20, "criteria": "SCI/EI/CSSCI/核心期刊论文；发明专利；学科竞赛省级以上获奖；大创项目"},
+      {"name": "实践经历", "weight": 15, "max": 15, "criteria": "社会实践/志愿服务/学生工作；省级以上表彰加分"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "A 类审批表一页不超；B 类书信体 1200-2000 字；签字盖章齐全；不得涂改"}
+    ],
+    "veto_items": [
+      "学习成绩排名或综合排名 > 10% 且不满足破格 7 类",
+      "必修课有不及格",
+      "查重率 > 30%",
+      "A 类申请理由 < 180 字或 > 200 字",
+      "申请理由栏出现称呼语（A 类硬规则）",
+      "无辅导员签字或院系公章",
+      "当年已获国家奖学金或国家励志奖学金"
+    ],
+    "breakthrough_channels": [
+      "排名前 10%-30% 但有道德风尚表彰（地市级以上）",
+      "排名前 10%-30% 但有第一作者 SCI/EI/CSSCI 论文",
+      "排名前 10%-30% 但有国际/国家级学科竞赛一等奖及以上",
+      "排名前 10%-30% 但有发明专利授权（第一发明人）",
+      "排名前 10%-30% 但有省级以上文艺/体育竞赛突出表现",
+      "排名前 10%-30% 但有见义勇为等重大精神文明事迹",
+      "排名前 10%-30% 但有少数民族/西部边疆地区特殊贡献"
+    ]
+  },
+
+  "motivation_scholarship": {
+    "name": "国家励志奖学金",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "gpa_rank_top": "30%",
+      "comprehensive_rank_top": "30%",
+      "poverty_registered": true,
+      "no_discipline_record": true,
+      "required_courses_fail": false
+    },
+    "dimensions": [
+      {"name": "思想品德", "weight": 20, "max": 20, "criteria": "自立自强、感恩奉献、艰苦奋斗精神"},
+      {"name": "学业表现", "weight": 35, "max": 35, "criteria": "GPA 前 30% 满分；前 15% 加分；外语等级加分"},
+      {"name": "家庭经济困难", "weight": 20, "max": 20, "criteria": "建档立卡/低保/特困救助；孤儿/烈士子女优先；家庭年收入与学费差额"},
+      {"name": "实践经历", "weight": 15, "max": 15, "criteria": "勤工助学岗位；志愿服务；积极参与资助政策宣传"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "1500 字左右；附家庭经济困难证明；签字齐全"}
+    ],
+    "veto_items": [
+      "未通过家庭经济困难认定（无建档立卡）",
+      "GPA 排名 > 30%",
+      "查重率 > 30%",
+      "无家庭经济困难证明材料",
+      "申请理由未体现家庭经济困难情况",
+      "当年已获国家奖学金（不可重复）"
+    ]
+  },
+
+  "university_scholarship": {
+    "name": "校级奖学金",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "gpa_rank_top": "30%",
+      "no_discipline_record": true,
+      "required_courses_fail": false
+    },
+    "dimensions": [
+      {"name": "思想品德", "weight": 15, "max": 15, "criteria": "遵纪守法、团结同学、积极参加集体活动"},
+      {"name": "学业表现", "weight": 60, "max": 60, "criteria": "GPA 是核心；一等约前 5%；二等约前 15%；三等约前 30%"},
+      {"name": "创新能力", "weight": 10, "max": 10, "criteria": "科研论文/竞赛获奖加分（非硬性）"},
+      {"name": "实践经历", "weight": 5, "max": 5, "criteria": "社会工作/志愿服务"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "格式规范、字数 800-1500、签字齐全"}
+    ],
+    "veto_items": [
+      "GPA 排名 > 30%",
+      "必修课有不及格",
+      "查重率 > 30%",
+      "字数 < 800"
+    ]
+  },
+
+  "enterprise_scholarship": {
+    "name": "企业专项奖学金",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "gpa_rank_top": "30%",
+      "industry_match_required": true,
+      "no_discipline_record": true
+    },
+    "dimensions": [
+      {"name": "思想品德", "weight": 10, "max": 10, "criteria": "职业操守、行业相关价值观"},
+      {"name": "学业表现", "weight": 30, "max": 30, "criteria": "GPA 前 30%；专业核心课成绩突出"},
+      {"name": "行业兴趣", "weight": 25, "max": 25, "criteria": "对设立企业所在行业有真实兴趣、选修相关课程、参加行业活动"},
+      {"name": "职业规划", "weight": 25, "max": 25, "criteria": "明确职业方向；与企业业务契合；有实习/项目经历加分"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "1000-1500 字；体现企业特色；无错别字"}
+    ],
+    "veto_items": [
+      "职业规划与该企业业务完全不相关",
+      "查重率 > 30%",
+      "未提企业名称或行业关键词",
+      "GPA 排名 > 30%"
+    ]
+  },
+
+  "single_scholarship": {
+    "name": "单项奖学金",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "single_dim_outstanding": true,
+      "no_discipline_record": true
+    },
+    "dimensions": [
+      {"name": "单项突出表现", "weight": 60, "max": 60, "criteria": "科研/社会工作/文体/社会实践/创新创业/学习等单一维度有突出成果"},
+      {"name": "思想品德", "weight": 15, "max": 15, "criteria": "遵纪守法、品行端正"},
+      {"name": "学业表现", "weight": 15, "max": 15, "criteria": "GPA 不挂科；学习单项要求前 30%"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "1000 字左右；突出单项亮点；附证明材料"}
+    ],
+    "veto_items": [
+      "申报维度无具体成果支撑",
+      "查重率 > 30%",
+      "无佐证材料（获奖证书/证明等）",
+      "字数 < 600"
+    ]
+  },
+
+  "innovation_research": {
+    "name": "大创-创新训练",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "team_size_min": 3,
+      "team_size_max": 5,
+      "advisor_required": true,
+      "duration_months_min": 12
+    },
+    "dimensions": [
+      {"name": "创新性", "weight": 25, "max": 25, "criteria": "选题前沿；方法新颖；与已有工作有明确区别"},
+      {"name": "可行性", "weight": 25, "max": 25, "criteria": "技术路线合理；时间充足；团队能力匹配；经费预算合理"},
+      {"name": "必要性", "weight": 15, "max": 15, "criteria": "痛点真实；意义明确；引用最新政策/数据"},
+      {"name": "团队", "weight": 15, "max": 15, "criteria": "分工合理；专业互补；指导教师有相关成果"},
+      {"name": "规范性", "weight": 10, "max": 10, "criteria": "格式正确；栏目齐全；参考文献规范"},
+      {"name": "预期成果", "weight": 10, "max": 10, "criteria": "论文/专利/报告可量化；不写'若干'"}
+    ],
+    "veto_items": [
+      "团队成员全是大一",
+      "无指导教师",
+      "查重率 > 30%",
+      "项目名称 > 25 字或含 4 层'基于...的...研究'",
+      "无参考文献",
+      "经费预算超过上限（国家级 2-10 万）"
+    ]
+  },
+
+  "entrepreneurship_training": {
+    "name": "大创-创业训练",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "team_size_min": 3,
+      "advisor_required": true,
+      "business_plan_required": true
+    },
+    "dimensions": [
+      {"name": "项目创新性", "weight": 20, "max": 20, "criteria": "商业模式新颖；产品/服务有差异化"},
+      {"name": "市场分析", "weight": 20, "max": 20, "criteria": "目标市场清晰；竞品分析客观；SWOT 完整"},
+      {"name": "可行性", "weight": 20, "max": 20, "criteria": "财务预测合理；运营计划可执行；风险可控"},
+      {"name": "团队", "weight": 15, "max": 15, "criteria": "成员专业互补；含财务/技术/市场三类角色"},
+      {"name": "规范性", "weight": 15, "max": 15, "criteria": "BP 完整（执行摘要/市场/产品/运营/财务/团队）"},
+      {"name": "预期成果", "weight": 10, "max": 10, "criteria": "营收预测/用户数/融资目标明确"}
+    ],
+    "veto_items": [
+      "无完整商业计划书",
+      "查重率 > 30%",
+      "财务数据明显不合理（如首年盈利 1000 万）",
+      "团队无技术负责人"
+    ]
+  },
+
+  "entrepreneurship_practice": {
+    "name": "大创-创业实践",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "company_registered": true,
+      "operation_months_min": 6,
+      "real_revenue_or_users": true
+    },
+    "dimensions": [
+      {"name": "公司运营实绩", "weight": 30, "max": 30, "criteria": "实际营收、用户数、融资额；运营时间 ≥ 6 个月"},
+      {"name": "创新性", "weight": 15, "max": 15, "criteria": "技术或商业模式有差异化"},
+      {"name": "团队", "weight": 20, "max": 20, "criteria": "核心成员持股；分工明确；含创始人"},
+      {"name": "财务", "weight": 15, "max": 15, "criteria": "财务报表规范；现金流健康；融资记录清晰"},
+      {"name": "社会效益", "weight": 10, "max": 10, "criteria": "带动就业、纳税、社会公益"},
+      {"name": "规范性", "weight": 10, "max": 10, "criteria": "营业执照、税务证明、银行流水齐全"}
+    ],
+    "veto_items": [
+      "公司未实际注册或注册未满 6 个月",
+      "无实际营收或用户数据",
+      "查重率 > 30%",
+      "无营业执照复印件"
+    ]
+  },
+
+  "challenge_cup": {
+    "name": "挑战杯-课外学术科技作品",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "category_valid": true,
+      "advisor_required": true,
+      "original_work": true
+    },
+    "dimensions": [
+      {"name": "学术价值/创新性", "weight": 30, "max": 30, "criteria": "选题前沿；方法新颖；与已有工作有明确区别；理论/技术突破"},
+      {"name": "科学性/严谨性", "weight": 25, "max": 25, "criteria": "研究方法规范；数据真实可靠；论证逻辑严密"},
+      {"name": "实用性", "weight": 20, "max": 20, "criteria": "成果可转化；解决实际问题；社会效益明确"},
+      {"name": "规范性", "weight": 15, "max": 15, "criteria": "格式符合要求；参考文献规范；图表清晰"},
+      {"name": "团队/作者", "weight": 10, "max": 10, "criteria": "本科生主导；导师指导参与；署名规范"}
+    ],
+    "veto_items": [
+      "查重率 > 30%",
+      "非本科生第一作者",
+      "无指导教师",
+      "作品超字数（自然科学类 8000 字、社科类 15000 字）",
+      "无参考文献或参考文献 < 5 篇"
+    ]
+  },
+
+  "internet_plus": {
+    "name": "互联网+创新创业大赛",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "team_size_min": 3,
+      "advisor_required": true,
+      "bp_required": true
+    },
+    "dimensions": [
+      {"name": "个人成长", "weight": 30, "max": 30, "criteria": "学生参与度；能力提升；成长故事"},
+      {"name": "项目创新", "weight": 30, "max": 30, "criteria": "技术/模式创新；专利/论文支撑；解决卡脖子"},
+      {"name": "产业价值", "weight": 25, "max": 25, "criteria": "市场规模；商业模式可行性；财务预测合理"},
+      {"name": "团队协作", "weight": 15, "max": 15, "criteria": "分工明确；专业互补；指导教师参与"}
+    ],
+    "veto_items": [
+      "查重率 > 30%",
+      "无完整 BP（执行摘要/市场/产品/运营/财务/团队）",
+      "财务预测不合理",
+      "项目名称含 4 层以上'基于...的...'"
+    ]
+  },
+
+  "graduate_recommendation": {
+    "name": "保研推免",
+    "max_score": 100,
+    "threshold_pass": 85,
+    "hard_gates": {
+      "gpa_rank_top": "15%",
+      "english_required": true,
+      "no_discipline_record": true,
+      "credits_completed": true
+    },
+    "dimensions": [
+      {"name": "学业表现", "weight": 50, "max": 50, "criteria": "GPA + 排名；前 6 学期成绩；英语六级 425+ 或同等"},
+      {"name": "科研能力", "weight": 25, "max": 25, "criteria": "论文/专利/竞赛/大创项目；导师推荐力度"},
+      {"name": "综合素质", "weight": 15, "max": 15, "criteria": "学生工作/社会实践/志愿服务；获奖经历"},
+      {"name": "个人陈述", "weight": 10, "max": 10, "criteria": "研究方向明确；与目标导师契合；个人特色"}
+    ],
+    "veto_items": [
+      "GPA 排名 > 15%（部分 985 高校要求 10%）",
+      "英语成绩未达线（六级 425 / 雅思 6.0 / 托福 80）",
+      "查重率 > 30%",
+      "必修课有不及格",
+      "无导师接收意向"
+    ]
+  },
+
+  "outstanding_graduate": {
+    "name": "优秀毕业生",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "four_year_gpa_top": "30%",
+      "no_discipline_record": true,
+      "credits_completed": true
+    },
+    "dimensions": [
+      {"name": "思想品德", "weight": 15, "max": 15, "criteria": "四年思想政治表现；入党/入团；品德评价"},
+      {"name": "学业表现", "weight": 35, "max": 35, "criteria": "四年综合 GPA；排名；学位课成绩"},
+      {"name": "科研创新", "weight": 20, "max": 20, "criteria": "论文/专利/竞赛/大创；毕业论文质量"},
+      {"name": "社会实践", "weight": 15, "max": 15, "criteria": "学生工作/志愿服务/实习经历；省级以上表彰加分"},
+      {"name": "就业去向", "weight": 10, "max": 10, "criteria": "已签三方/保研/考研/出国；优质就业加分"},
+      {"name": "材料规范", "weight": 5, "max": 5, "criteria": "1500-2000 字；附四年在校成绩单"}
+    ],
+    "veto_items": [
+      "四年 GPA 排名 > 30%",
+      "查重率 > 30%",
+      "未获得学位证",
+      "字数 < 1200"
+    ]
+  },
+
+  "party_application": {
+    "name": "入党申请书",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "word_count_min": 3000,
+      "word_count_max": 5000,
+      "age_min": 18,
+      "chinese_citizen": true
+    },
+    "dimensions": [
+      {"name": "政治理论", "weight": 25, "max": 25, "criteria": "必引 6 项要点（党/习近平新时代/二十大/两个确立/两个维护/全心全意为人民服务）；指导思想 6 项顺序正确"},
+      {"name": "对党认识", "weight": 20, "max": 20, "criteria": "党史/党的性质/党的宗旨/党的纲领；无政治错误"},
+      {"name": "个人经历与思想变化", "weight": 25, "max": 25, "criteria": "成长经历真实；思想转变具体；不堆砌套话"},
+      {"name": "缺点与改进", "weight": 15, "max": 15, "criteria": "缺点具体；改进措施可操作；一一对应"},
+      {"name": "材料规范", "weight": 15, "max": 15, "criteria": "字数 3000-5000；禁用简写（习思想/20大/马列/毛思想）；不涂改"}
+    ],
+    "veto_items": [
+      "字数 < 3000",
+      "查重率 > 30%（与党章原文连续 50 字雷同）",
+      "必引 6 项要点缺失任一",
+      "出现政治错误（如错误表述台湾/港澳/历史事件）",
+      "禁用简写未纠正",
+      "无个人真实经历（全篇套话）"
+    ]
+  },
+
+  "thought_report": {
+    "name": "思想汇报",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "word_count_min": 1500,
+      "word_count_max": 2000,
+      "quarterly_submission": true
+    },
+    "dimensions": [
+      {"name": "理论学习", "weight": 30, "max": 30, "criteria": "结合最新时政（如二十大/两会）；不照抄原文"},
+      {"name": "学习工作情况", "weight": 25, "max": 25, "criteria": "本季度学业/工作真实进展"},
+      {"name": "思想动态", "weight": 25, "max": 25, "criteria": "思想转变具体；与理论结合"},
+      {"name": "不足与改进", "weight": 10, "max": 10, "criteria": "缺点具体；改进措施可操作"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "字数 1500-2000；季度时间明确；落款规范"}
+    ],
+    "veto_items": [
+      "字数 < 1500",
+      "查重率 > 30%",
+      "无具体时政结合（只写理论）",
+      "未署本季度日期"
+    ]
+  },
+
+  "party_full_member": {
+    "name": "党员转正申请书",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "word_count_min": 3000,
+      "word_count_max": 4500,
+      "probation_completed": true
+    },
+    "dimensions": [
+      {"name": "理论学习", "weight": 20, "max": 20, "criteria": "预备期理论学习；结合最新时政"},
+      {"name": "预备期表现", "weight": 30, "max": 30, "criteria": "8 维度（理论/政治/学习/义务/党费/支部/群众/廉洁）均覆盖"},
+      {"name": "缺点与改进", "weight": 20, "max": 20, "criteria": "缺点具体；改进措施与缺点一一对应"},
+      {"name": "转正态度", "weight": 15, "max": 15, "criteria": "无论是否批准的态度表达"},
+      {"name": "材料规范", "weight": 15, "max": 15, "criteria": "字数 3000-4500；预备期起止日期；党支部大会意见栏"}
+    ],
+    "veto_items": [
+      "字数 < 3000",
+      "查重率 > 30%（与党章原文连续 50 字）",
+      "8 维度表现缺失任一",
+      "改进措施数量 ≠ 缺点数量",
+      "未提预备期起止日期"
+    ]
+  },
+
+  "college_research": {
+    "name": "院级科研立项",
+    "max_score": 100,
+    "threshold_pass": 70,
+    "hard_gates": {
+      "team_size_min": 1,
+      "team_size_max": 3,
+      "advisor_required": true,
+      "duration_months_min": 6
+    },
+    "dimensions": [
+      {"name": "选题价值", "weight": 25, "max": 25, "criteria": "结合本专业；与培养方案契合"},
+      {"name": "可行性", "weight": 25, "max": 25, "criteria": "技术路线合理；6-12 个月可完成"},
+      {"name": "创新性", "weight": 15, "max": 15, "criteria": "方法/视角有新意"},
+      {"name": "团队", "weight": 15, "max": 15, "criteria": "1-3 人；本科生为主；导师有相关研究方向"},
+      {"name": "预期成果", "weight": 10, "max": 10, "criteria": "至少 1 篇论文产出；调研报告/系统/原型"},
+      {"name": "规范性", "weight": 10, "max": 10, "criteria": "经费 2000-5000 元；参考文献至少 5 篇"}
+    ],
+    "veto_items": [
+      "无指导教师",
+      "查重率 > 30%",
+      "经费预算超过 5000 元",
+      "无参考文献"
+    ]
+  },
+
+  "university_research": {
+    "name": "校级科研立项",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "team_size_min": 2,
+      "team_size_max": 5,
+      "advisor_required": true,
+      "duration_months_min": 12
+    },
+    "dimensions": [
+      {"name": "创新性", "weight": 25, "max": 25, "criteria": "选题前沿；方法新颖"},
+      {"name": "可行性", "weight": 25, "max": 25, "criteria": "技术路线清晰；12-18 个月可完成"},
+      {"name": "必要性", "weight": 15, "max": 15, "criteria": "痛点真实；引用最新政策/数据"},
+      {"name": "团队", "weight": 15, "max": 15, "criteria": "2-5 人；跨年级/跨专业加分"},
+      {"name": "预期成果", "weight": 10, "max": 10, "criteria": "论文/专利/系统；可量化"},
+      {"name": "规范性", "weight": 10, "max": 10, "criteria": "经费 5000-2 万；参考文献至少 8 篇"}
+    ],
+    "veto_items": [
+      "无指导教师",
+      "查重率 > 30%",
+      "经费预算超过 2 万",
+      "无参考文献"
+    ]
+  },
+
+  "social_survey": {
+    "name": "社会调查报告",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "word_count_min": 5000,
+      "team_size_min": 1,
+      "field_work_required": true
+    },
+    "dimensions": [
+      {"name": "选题价值", "weight": 20, "max": 20, "criteria": "社会热点；政策相关；具有现实意义"},
+      {"name": "调研方法", "weight": 25, "max": 25, "criteria": "问卷/访谈/观察法规范；样本量充足；抽样科学"},
+      {"name": "数据分析", "weight": 25, "max": 25, "criteria": "统计方法正确；图表清晰；结论有数据支撑"},
+      {"name": "结论建议", "weight": 15, "max": 15, "criteria": "结论可靠；建议可操作；与调研数据对应"},
+      {"name": "规范性", "weight": 15, "max": 15, "criteria": "5000+ 字；参考文献；附问卷/访谈提纲"}
+    ],
+    "veto_items": [
+      "无实地调研（纯网络资料）",
+      "查重率 > 30%",
+      "样本量 < 30",
+      "无统计图表"
+    ]
+  },
+
+  "outstanding_student": {
+    "name": "优秀学生/三好学生",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "gpa_rank_top": "30%",
+      "pe_pass": true,
+      "no_discipline_record": true
+    },
+    "dimensions": [
+      {"name": "思想品德", "weight": 25, "max": 25, "criteria": "积极参与思政活动；群众基础好；品德评价优秀"},
+      {"name": "学业表现", "weight": 40, "max": 40, "criteria": "GPA 前 30%；体育达标；必修课无不及格"},
+      {"name": "身体素质", "weight": 15, "max": 15, "criteria": "体测合格；参加体育活动"},
+      {"name": "社会实践", "weight": 10, "max": 10, "criteria": "学生工作/志愿服务/竞赛"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "1000-1500 字；签字齐全"}
+    ],
+    "veto_items": [
+      "GPA 排名 > 30%",
+      "体育不达标",
+      "查重率 > 30%",
+      "字数 < 800"
+    ]
+  },
+
+  "civilized_student": {
+    "name": "文明大学生",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "no_discipline_record": true,
+      "dorm_inspection_pass": true
+    },
+    "dimensions": [
+      {"name": "课堂纪律", "weight": 20, "max": 20, "criteria": "出勤率；课堂表现"},
+      {"name": "宿舍卫生", "weight": 20, "max": 20, "criteria": "宿舍卫生检查合格；无违规电器"},
+      {"name": "网络文明", "weight": 20, "max": 20, "criteria": "不传谣不信谣；网络发言规范"},
+      {"name": "道德品质", "weight": 25, "max": 25, "criteria": "诚实守信；助人为乐；拾金不昧等"},
+      {"name": "材料规范", "weight": 15, "max": 15, "criteria": "800-1200 字；突出文明素养"}
+    ],
+    "veto_items": [
+      "宿舍卫生检查不合格",
+      "查重率 > 30%",
+      "字数 < 600"
+    ]
+  },
+
+  "outstanding_cadre": {
+    "name": "优秀学生干部",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "cadre_position_held": true,
+      "tenure_months_min": 6,
+      "no_discipline_record": true
+    },
+    "dimensions": [
+      {"name": "思想品德", "weight": 15, "max": 15, "criteria": "政治立场坚定；带头作用明显"},
+      {"name": "学业表现", "weight": 25, "max": 25, "criteria": "GPA 不挂科；前 50%"},
+      {"name": "工作实绩", "weight": 35, "max": 35, "criteria": "任职期间组织活动数量与质量；获校级以上表彰加分"},
+      {"name": "群众基础", "weight": 15, "max": 15, "criteria": "同学评价好；师生关系融洽"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "1000-1500 字；附任职证明"}
+    ],
+    "veto_items": [
+      "无实际任职经历（< 6 个月）",
+      "GPA 挂科",
+      "查重率 > 30%",
+      "无具体工作实绩"
+    ]
+  },
+
+  "youth_league_application": {
+    "name": "入团申请书",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "word_count_min": 1000,
+      "word_count_max": 2000,
+      "age_min": 14,
+      "age_max": 28
+    },
+    "dimensions": [
+      {"name": "对团的认识", "weight": 30, "max": 30, "criteria": "团史/团章/团的基本知识"},
+      {"name": "入团动机", "weight": 25, "max": 25, "criteria": "动机端正；结合个人成长"},
+      {"name": "个人表现", "weight": 25, "max": 25, "criteria": "学习/工作/思想表现"},
+      {"name": "材料规范", "weight": 20, "max": 20, "criteria": "1000-2000 字；称呼规范；落款规范"}
+    ],
+    "veto_items": [
+      "字数 < 1000",
+      "查重率 > 30%",
+      "年龄不在 14-28 岁",
+      "未提团的基本知识"
+    ]
+  },
+
+  "grant_application": {
+    "name": "助学金申请",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "poverty_registered": true,
+      "no_discipline_record": true,
+      "required_courses_fail": false
+    },
+    "dimensions": [
+      {"name": "家庭经济情况", "weight": 40, "max": 40, "criteria": "建档立卡/低保/特困；家庭收入与支出明细；突发变故说明"},
+      {"name": "思想品德", "weight": 20, "max": 20, "criteria": "自立自强；感恩奉献"},
+      {"name": "学业表现", "weight": 20, "max": 20, "criteria": "不挂科；前 50%"},
+      {"name": "勤工助学", "weight": 10, "max": 10, "criteria": "岗位参与；减轻家庭负担"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "800-1500 字；附家庭经济困难证明"}
+    ],
+    "veto_items": [
+      "未通过家庭经济困难认定",
+      "GPA 挂科",
+      "查重率 > 30%",
+      "无家庭经济困难证明"
+    ]
+  },
+
+  "western_plan": {
+    "name": "西部计划",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "graduate_required": true,
+      "volunteer_experience": true,
+      "no_discipline_record": true
+    },
+    "dimensions": [
+      {"name": "思想觉悟", "weight": 30, "max": 30, "criteria": "服务西部意愿真实；吃苦精神；奉献意识"},
+      {"name": "志愿服务经历", "weight": 25, "max": 25, "criteria": "在校志愿服务时长；省级以上表彰加分"},
+      {"name": "专业匹配", "weight": 20, "max": 20, "criteria": "专业与西部岗位需求匹配（教育/医疗/农技等）"},
+      {"name": "身体素质", "weight": 15, "max": 15, "criteria": "体检合格；能适应高原/边疆环境"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "1500-2000 字；个人陈述 + 推荐信"}
+    ],
+    "veto_items": [
+      "非应届毕业生",
+      "无志愿服务经历",
+      "查重率 > 30%",
+      "体检不合格"
+    ]
+  },
+
+  "volunteer_teaching": {
+    "name": "研究生支教团",
+    "max_score": 100,
+    "threshold_pass": 85,
+    "hard_gates": {
+      "graduate_recommendation_qualified": true,
+      "gpa_rank_top": "30%",
+      "volunteer_hours_min": 100
+    },
+    "dimensions": [
+      {"name": "政治素质", "weight": 25, "max": 25, "criteria": "党员/团员；政治立场坚定"},
+      {"name": "学业表现", "weight": 25, "max": 25, "criteria": "保研资格；GPA 前 30%"},
+      {"name": "支教意愿", "weight": 25, "max": 25, "criteria": "服务西部意愿真实；吃苦精神"},
+      {"name": "表达能力", "weight": 15, "max": 15, "criteria": "普通话二甲以上；有教学/演讲经历"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "1500-2000 字；附志愿服务证明"}
+    ],
+    "veto_items": [
+      "无保研资格",
+      "志愿服务时长 < 100 小时",
+      "查重率 > 30%",
+      "普通话未达二甲"
+    ]
+  },
+
+  "tech_service": {
+    "name": "科技服务",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "team_size_min": 3,
+      "advisor_required": true,
+      "tech_output_required": true
+    },
+    "dimensions": [
+      {"name": "技术含量", "weight": 30, "max": 30, "criteria": "解决实际技术问题；技术方案合理"},
+      {"name": "服务对象", "weight": 20, "max": 20, "criteria": "服务企业/农村/社区真实需求"},
+      {"name": "团队", "weight": 20, "max": 20, "criteria": "专业匹配；分工合理"},
+      {"name": "成果", "weight": 20, "max": 20, "criteria": "技术报告/专利/转化协议"},
+      {"name": "规范性", "weight": 10, "max": 10, "criteria": "服务协议；过程记录；总结报告"}
+    ],
+    "veto_items": [
+      "无实际服务对象",
+      "查重率 > 30%",
+      "无技术成果输出"
+    ]
+  },
+
+  "selected_graduate": {
+    "name": "选调生申请",
+    "max_score": 100,
+    "threshold_pass": 85,
+    "hard_gates": {
+      "party_member_required": true,
+      "student_cadre_required": true,
+      "gpa_rank_top": "50%"
+    },
+    "dimensions": [
+      {"name": "政治素质", "weight": 30, "max": 30, "criteria": "党员；政治立场坚定；基层服务意愿"},
+      {"name": "学生干部经历", "weight": 25, "max": 25, "criteria": "校级/院级主要学生干部；任职 ≥ 1 年"},
+      {"name": "学业表现", "weight": 20, "max": 20, "criteria": "GPA 前 50%；无挂科"},
+      {"name": "综合素质", "weight": 15, "max": 15, "criteria": "获奖经历；社会实践；表达能力"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "1500-2500 字；个人陈述 + 推荐信"}
+    ],
+    "veto_items": [
+      "非党员",
+      "无学生干部经历",
+      "查重率 > 30%",
+      "无基层服务意愿表达"
+    ]
+  },
+
+  "policy_lecture": {
+    "name": "政策宣讲",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "team_size_min": 3,
+      "field_activity_required": true
+    },
+    "dimensions": [
+      {"name": "政策理解", "weight": 25, "max": 25, "criteria": "对宣讲政策理解准确；不歪曲"},
+      {"name": "宣讲覆盖", "weight": 25, "max": 25, "criteria": "受众数量；场次；覆盖面"},
+      {"name": "形式创新", "weight": 20, "max": 20, "criteria": "线上+线下；多媒体运用；互动设计"},
+      {"name": "社会反响", "weight": 20, "max": 20, "criteria": "媒体报道；受众反馈；持续影响"},
+      {"name": "规范性", "weight": 10, "max": 10, "criteria": "总结报告；照片视频；签到表"}
+    ],
+    "veto_items": [
+      "无实地宣讲",
+      "查重率 > 30%",
+      "宣讲政策有错误表述"
+    ]
+  },
+
+  "class_collective": {
+    "name": "优秀班集体",
+    "max_score": 100,
+    "threshold_pass": 80,
+    "hard_gates": {
+      "class_size_min": 20,
+      "academic_pass_rate": "95%"
+    },
+    "dimensions": [
+      {"name": "班风学风", "weight": 30, "max": 30, "criteria": "整体 GPA；过级率；挂科率低"},
+      {"name": "班级活动", "weight": 25, "max": 25, "criteria": "主题班会/团日活动；参与率"},
+      {"name": "班委建设", "weight": 20, "max": 20, "criteria": "班委分工合理；工作机制完善"},
+      {"name": "集体荣誉", "weight": 15, "max": 15, "criteria": "班级获校级以上表彰"},
+      {"name": "材料规范", "weight": 10, "max": 10, "criteria": "2000-3000 字；附班级活动照片"}
+    ],
+    "veto_items": [
+      "挂科率 > 5%",
+      "查重率 > 30%",
+      "班委未满 1 学年"
+    ]
+  },
+
+  "major_transfer": {
+    "name": "转专业申请",
+    "max_score": 100,
+    "threshold_pass": 75,
+    "hard_gates": {
+      "gpa_rank_top": "30%",
+      "credits_completed": true,
+      "no_discipline_record": true
+    },
+    "dimensions": [
+      {"name": "转专业理由", "weight": 35, "max": 35, "criteria": "理由真实合理；兴趣特长匹配；非逃避原专业"},
+      {"name": "学业表现", "weight": 30, "max": 30, "criteria": "原专业 GPA 前 30%；目标专业相关课程成绩"},
+      {"name": "目标专业认知", "weight": 20, "max": 20, "criteria": "对目标专业了解；已有自学/选修经历"},
+      {"name": "材料规范", "weight": 15, "max": 15, "criteria": "800-1500 字；家长同意书"}
+    ],
+    "veto_items": [
+      "GPA 排名 > 30%",
+      "查重率 > 30%",
+      "转专业理由仅为'原专业难'"
+    ]
+  }
+}
