@@ -233,6 +233,38 @@ college-application-doc/
 
 ---
 
+## 零基础使用指南（文科生 / 不会编程也能用）
+
+> **不需要装环境、不需要敲命令、不需要 GitHub 账号。**
+
+### 方式 A：网页 AI 直接用（零门槛，推荐文科生）
+
+1. 打开任意 AI 对话工具（[豆包](https://doubao.com)、[DeepSeek](https://chat.deepseek.com)、[Claude](https://claude.ai)、[ChatGPT](https://chat.openai.com)）
+2. 在本仓库找到你需要的子 skill，打开对应的 `SKILL.md` 文件（如 `subskills/national_scholarship/SKILL.md`）
+3. 复制文件全部内容，粘贴到 AI 对话框，发送
+4. 然后跟 AI 说："我要申请国家奖学金，请按这个 skill 帮我写"
+
+**就这么简单，不需要任何技术操作。**
+
+### 方式 B：AI 编程助手一键装（低门槛）
+
+如果你电脑上装了 [Trae](https://www.trae.cn/)、[Cursor](https://cursor.sh/)、[Claude Code](https://claude.ai/code) 等 AI 编程工具：
+
+```bash
+npx skills add cuic19053-hue/-skills-
+```
+
+装完后直接跟 AI 说"帮我写入党申请书"，它会自动加载对应 skill。
+
+### 方式 C：直接看模板手动套用（纯手工）
+
+1. clone 或下载本仓库
+2. 进入 `subskills/` 找到对应目录
+3. 看 `SKILL.md` 里的结构说明和 `examples/` 里的示例
+4. 手动套用到自己的申报书上
+
+---
+
 ## 安装
 
 本项目遵循 [Agent Skills 开放标准](https://agentskills.io/specification)，支持 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI、Windsurf 等所有兼容 SKILL.md 的 Agent。
