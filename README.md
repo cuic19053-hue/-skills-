@@ -22,6 +22,9 @@
 
 一套覆盖中国大学生常见申报场景的 Agent Skills。**35 个子 skill**，从大创立项到入党申请书，从奖学金到保研推免，从应征入伍到公派留学，让 AI 编程助手变成你身边那个"帮学弟学妹改过几十份申报书"的学长。
 
+> 🔔 **不需要克隆、不需要装环境、不需要会编程。**
+> 找到你需要的 [子 skill](./subskills/README.md)，复制 `SKILL.md` 内容粘贴到豆包/DeepSeek/Claude，就能用。下方有[保姆级教程](#零基础使用指南文科生--不会编程也能用)。
+
 ---
 
 ## 为什么做这个
@@ -265,7 +268,10 @@ npx skills add cuic19053-hue/-skills-
 
 ---
 
-## 安装
+## 安装（高级用户 / 开发者）
+
+> 💡 **普通用户不需要看这一节。** 直接用上方的[零基础使用指南](#零基础使用指南文科生--不会编程也能用)即可。
+> 以下内容适合：AI 编程助手用户（Trae/Cursor/Claude Code）、贡献者、需要批量生成 Word 的高级用户。
 
 本项目遵循 [Agent Skills 开放标准](https://agentskills.io/specification)，支持 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI、Windsurf 等所有兼容 SKILL.md 的 Agent。
 
