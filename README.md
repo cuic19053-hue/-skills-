@@ -1,12 +1,12 @@
-# 大学生申报书/申请书制作 Skill 集合
+# 大学生申报书/申请书 Agent Skills 集合
 
 [![Agent Skills](https://img.shields.io/badge/Agent_Skills-Compatible-6e3bf0)](https://agentskills.io/specification)
-[![Platform](https://img.shields.io/badge/Platform-Claude_Code_|_Codex_|_Cursor_|_Copilot_|_Gemini_CLI-blue)]()
+[![Platform](https://img.shields.io/badge/Platform-WorkBuddy_|_Claude_Code_|_Codex_|_Cursor-blue)]()
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
-[![Install](https://img.shields.io/badge/install-npx_skills_add_cuic19053--hue/-skills---black)](https://github.com/evaisse/npx-skills)
 [![Stars](https://img.shields.io/github/stars/cuic19053-hue/-skills-?style=social)](https://github.com/cuic19053-hue/-skills-)
 [![Subskills](https://img.shields.io/badge/Subskills-35-blue)](#能写哪些申报书)
 [![Content](https://img.shields.io/badge/Content-2.4MB_|_42000+_lines-orange)]()
+[![Mermaid](https://img.shields.io/badge/Charts-Mermaid-ff3670)]()
 
 > 📊 **项目数据看板**
 >
@@ -20,10 +20,10 @@
 >
 > ⭐ **如果这个项目帮到了你，点个 Star 让更多同学看到。Star 数越多，越能吸引赛道专家贡献内容，最终受益的是所有使用者。**
 
-一套覆盖中国大学生常见申报场景的 Agent Skills。**35 个子 skill**，从大创立项到入党申请书，从奖学金到保研推免，从应征入伍到公派留学，让 AI 编程助手变成你身边那个"帮学弟学妹改过几十份申报书"的学长。
+一套覆盖中国大学生常见申报场景的 Agent Skills。**35 个子 skill**，从大创立项到入党申请书，从奖学金到保研推免，从应征入伍到公派留学。
 
-> 🔔 **不需要克隆、不需要装环境、不需要会编程。**
-> 找到你需要的 [子 skill](./subskills/README.md)，复制 `SKILL.md` 内容粘贴到豆包/DeepSeek/Claude，就能用。下方有[保姆级教程](#零基础使用指南文科生--不会编程也能用)。
+> 🔔 **下载 WorkBuddy，装上这 35 个 skills，对话就能生成图文并茂的申报书。**
+> 不需要克隆、不需要装环境、不需要会编程。技术路线图、甘特图、流程图全部自动生成，输出可直接提交的 Word 文档。
 
 ---
 
@@ -128,69 +128,18 @@ ChatGPT 可以帮你写，但通用模型不知道"大创"是什么、不知道�
 
 ```
 college-application-doc/
-├── SKILL.md                 # 路由入口：识别类型 -> 分流到子 skill
-├── AGENT_PROMPT.md          # Agent 使用提示词与工作流
-├── CASE_ANALYSIS.md         # 案例分析文档
-├── SUBAGENT_TEMPLATE.md     # 子代理模板
-├── index.json               # 机器可读子 skill 索引
-├── version.json             # 项目版本元数据
-├── README.md                # 你正在看的
-├── LICENSE                  # MIT
-├── subskills/               # 35 个子 skill，每个独立文件夹
-│   ├── innovation_research/SKILL.md           # 大创-创新训练
-│   ├── entrepreneurship_training/SKILL.md     # 大创-创业训练
-│   ├── entrepreneurship_practice/SKILL.md     # 大创-创业实践
-│   ├── university_research/SKILL.md           # 校级科研立项
-│   ├── college_research/SKILL.md              # 院级科研立项
-│   ├── challenge_cup/SKILL.md                 # 挑战杯
-│   ├── internet_plus/SKILL.md                 # 互联网+
-│   ├── internet_plus_red_tour/SKILL.md        # 互联网+红旅赛道
-│   ├── national_scholarship/SKILL.md          # 国家奖学金
-│   ├── motivation_scholarship/SKILL.md        # 国家励志奖学金
-│   ├── university_scholarship/SKILL.md        # 校级奖学金
-│   ├── enterprise_scholarship/SKILL.md        # 企业奖学金
-│   ├── single_scholarship/SKILL.md            # 单项奖学金
-│   ├── grant_application/SKILL.md             # 国家助学金
-│   ├── outstanding_graduate/SKILL.md          # 优秀毕业生
-│   ├── outstanding_student/SKILL.md           # 优秀学生
-│   ├── outstanding_cadre/SKILL.md             # 优秀学生干部
-│   ├── civilized_student/SKILL.md             # 文明大学生
-│   ├── class_collective/SKILL.md              # 优秀班集体
-│   ├── outstanding_thesis/SKILL.md            # 优秀毕业设计
-│   ├── social_survey/SKILL.md                 # 三下乡-社会调查
-│   ├── volunteer_teaching/SKILL.md            # 三下乡-支教
-│   ├── policy_lecture/SKILL.md                # 三下乡-政策宣讲
-│   ├── tech_service/SKILL.md                  # 三下乡-科技服务
-│   ├── western_plan/SKILL.md                  # 西部计划
-│   ├── party_application/SKILL.md             # 入党申请书
-│   ├── thought_report/SKILL.md                # 思想汇报
-│   ├── party_full_member/SKILL.md             # 转正申请书
-│   ├── youth_league_application/SKILL.md      # 入团申请书
-│   ├── graduate_recommendation/SKILL.md       # 保研推免
-│   ├── selected_graduate/SKILL.md             # 选调生申请
-│   ├── major_transfer/SKILL.md                # 转专业申请
-│   ├── military_enlistment/SKILL.md           # 应征入伍申请书
-│   ├── csc_scholarship/SKILL.md              # CSC 公派留学
-│   └── exchange_program/SKILL.md              # 交流项目申请
-├── references/              # 共享知识库（所有子 skill 按需引用）
-│   ├── types.md             # 8 类申报书栏目结构详解
-│   ├── writing_guide.md     # 撰写规范 + 格式标准 + 信息采集清单
+├── subskills/               # 35 个赛道 skill（核心资产）
+│   ├── innovation_research/SKILL.md    # 大创 · 创新训练（116 KB）
+│   ├── national_scholarship/SKILL.md   # 国家奖学金
+│   └── ...（共 35 个，详见上方表格）
+├── references/              # 共享知识库
+│   ├── writing_guide.md     # 撰写规范
 │   ├── review_criteria.md   # 评审打分维度
 │   └── pitfalls.md          # 常见错误与避坑指南
-├── scripts/
-│   └── build_docx.py        # 生成 Word 文档的辅助脚本
-├── utils/                   # 工程化能力模块（v2.1 新增）
-│   ├── dispatcher.py        # 分流决策树（790+行）
-│   ├── docx_common.py       # 通用 docx 工具
-│   ├── school_template.py   # 学校模板管理
-│   ├── pdf_export.py        # PDF 导出
-│   ├── plagiarism_checker.py # 查重检测
-│   ├── review_simulator.py  # 评审模拟
-│   └── schools/             # 学校模板（清华/北大/浙大/武大）
-└── examples/
-    ├── demos/               # demo Word 文档（v2.1 新增）
-    ├── innovation_project_example.md
-    └── scholarship_example.md
+├── examples/demos/          # 10 个成品 .docx 模板（直接下载）
+├── SKILL.md                 # 路由入口：识别类型 → 分流到子 skill
+├── index.json               # 机器可读子 skill 索引
+└── README.md                # 你正在看的
 ```
 
 ### 路由设计
@@ -236,144 +185,55 @@ college-application-doc/
 
 ---
 
-## 零基础使用指南（文科生 / 不会编程也能用）
+## 怎么用（3 步，5 分钟）
 
-> **不需要装环境、不需要敲命令、不需要 GitHub 账号。**
+### 1. 下载 WorkBuddy（免费）
+[WorkBuddy 官网](https://workbuddy.tencent.com) → 下载安装
 
-### 方式 A：网页 AI 直接用（零门槛，推荐文科生）
+### 2. 安装这 35 个 skills
+在 WorkBuddy 里搜索 `cuic19053-hue/-skills-`，一键安装全部 35 个赛道
 
-1. 打开任意 AI 对话工具（[豆包](https://doubao.com)、[DeepSeek](https://chat.deepseek.com)、[Claude](https://claude.ai)、[ChatGPT](https://chat.openai.com)）
-2. 在本仓库找到你需要的子 skill，打开对应的 `SKILL.md` 文件（如 `subskills/national_scholarship/SKILL.md`）
-3. 复制文件全部内容，粘贴到 AI 对话框，发送
-4. 然后跟 AI 说："我要申请国家奖学金，请按这个 skill 帮我写"
+### 3. 开始对话
+直接跟 WorkBuddy 说：
 
-**就这么简单，不需要任何技术操作。**
+> "帮我写一份大创创新训练申报书，我的课题是无人机路径规划"
 
-> ⚠️ **注意**：AI 在聊天框里输出的是纯文本，没有 Word 排版（字体/页边距/表格线等）。如果需要格式完整的文档，建议用下方的**方式 B 直接下载模板**。
-
-### 方式 B：直接下载成品模板（零门槛，推荐）
-
-> 不用复制粘贴，不用跟 AI 对话，直接下载完整的 Word 文档，填入自己的信息即可。
-
-[examples/demos/](https://github.com/cuic19053-hue/-skills-/tree/main/examples/demos) 目录存放了 10 个已经排版好的 demo 文档（含字体、表格、页边距、页眉页脚等完整格式）：
-
-| 下载 | 类型 | 说明 |
-|---|---|---|
-| [📄 国家奖学金申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_national_scholarship.docx) | 奖学金 | 8000 元国奖，前 10% GPA |
-| [📄 入党申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_party_application.docx) | 政治身份 | 4000 字，含入党志愿+认识 |
-| [📄 挑战杯申报书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_challenge_cup.docx) | 竞赛 | 自然科学类学术论文 |
-| [📄 互联网+商业计划书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_internet_plus.docx) | 竞赛 | 创业大赛，2025 新评审维度 |
-| [📄 大创创新训练.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_innovation_research.docx) | 科研 | 国家级，研究报告/论文产出 |
-| [📄 优秀毕业生申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_outstanding_graduate.docx) | 评优 | 省级+校级，四年综合表现 |
-| [📄 院级科研立项.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_college_research.docx) | 科研 | SRTP，含参考文献 |
-| [📄 应征入伍申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_military_enlistment.docx) | 征兵 | 2025 上半年应征 |
-| [📄 CSC 公派留学.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_csc_scholarship.docx) | 公派留学 | 联合培养博士研究生 |
-| [📄 大创创业训练.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_entrepreneurship_training.docx) | 科研 | 消防无人机项目（含 18 张表格+技术路线图） |
-
-**使用方法**：点击链接 → 浏览器下载 → 用 Word 打开 → 把内容替换成你自己的信息。
-
-### 方式 C：AI 编程助手一键装（低门槛）
-
-如果你电脑上装了 [Trae](https://www.trae.cn/)、[Cursor](https://cursor.sh/)、[Claude Code](https://claude.ai/code) 等 AI 编程工具：
-
-```bash
-npx skills add cuic19053-hue/-skills-
-```
-
-装完后直接跟 AI 说"帮我写入党申请书"，它会自动加载对应 skill。
-
-### 方式 D：直接看模板手动套用（纯手工）
-
-1. clone 或下载本仓库
-2. 进入 `subskills/` 找到对应目录
-3. 看 `SKILL.md` 里的结构说明和 `examples/` 里的示例
-4. 手动套用到自己的申报书上
+WorkBuddy 会自动：
+- 📋 追问你缺少的信息（排名？指导老师？预算？）
+- ✍️ 生成申报书正文
+- 📊 生成 Mermaid 图表（技术路线图 + 甘特图 + 流程图）
+- 📄 输出图文并茂的 Word 文档，可直接提交
 
 ---
 
-## 安装（高级用户 / 开发者）
+### 备选：网页 AI 直接用（不用装任何软件）
 
-> 💡 **普通用户不需要看这一节。** 直接用上方的[零基础使用指南](#零基础使用指南文科生--不会编程也能用)即可。
-> 以下内容适合：AI 编程助手用户（Trae/Cursor/Claude Code）、贡献者、需要批量生成 Word 的高级用户。
+如果你不想装 WorkBuddy，也可以直接用网页 AI：
 
-本项目遵循 [Agent Skills 开放标准](https://agentskills.io/specification)，支持 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI、Windsurf 等所有兼容 SKILL.md 的 Agent。
+1. 打开 [豆包](https://doubao.com)、[DeepSeek](https://chat.deepseek.com)、[Claude](https://claude.ai) 等
+2. 在 [subskills/](./subskills/README.md) 找到你需要的赛道，复制 `SKILL.md` 全部内容
+3. 粘贴到 AI 对话框，说"我要申请 xxx，请按这个 skill 帮我写"
 
-### 推荐方式：npx skills（一键安装）
+> ⚠️ 网页 AI 输出纯文本，不包含图片和 Word 排版。如果需要图文并茂的文档，建议用 WorkBuddy。
 
-[`npx skills`](https://github.com/evaisse/npx-skills) 是 Agent Skills 生态的官方 CLI 工具（Vercel Labs 出品），一行命令搞定安装、更新、卸载。
+### 备选：直接下载成品模板
 
-```bash
-# 安装全部 35 个 skill（项目级，提交到 Git 可与团队共享）
-npx skills add cuic19053-hue/-skills-
+[examples/demos/](https://github.com/cuic19053-hue/-skills-/tree/main/examples/demos) 目录存放了 10 个排版好的 .docx 文档：
 
-# 全局安装（所有项目都能用）
-npx skills add cuic19053-hue/-skills- -g
+| 下载 | 类型 |
+|---|---|
+| [📄 国家奖学金.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_national_scholarship.docx) | 奖学金 |
+| [📄 入党申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_party_application.docx) | 政治身份 |
+| [📄 挑战杯.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_challenge_cup.docx) | 竞赛 |
+| [📄 互联网+商业计划书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_internet_plus.docx) | 竞赛 |
+| [📄 大创创新训练.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_innovation_research.docx) | 科研 |
+| [📄 优秀毕业生.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_outstanding_graduate.docx) | 评优 |
+| [📄 院级科研立项.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_college_research.docx) | 科研 |
+| [📄 应征入伍.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_military_enlistment.docx) | 征兵 |
+| [📄 CSC 公派留学.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_csc_scholarship.docx) | 公派留学 |
+| [📄 大创创业训练.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_entrepreneurship_training.docx) | 科研 |
 
-# 只装你需要的几个
-npx skills add cuic19053-hue/-skills- --skill national-scholarship --skill party-application
-
-# 指定安装到特定 Agent
-npx skills add cuic19053-hue/-skills- -a claude-code -a cursor
-
-# CI/CD 或脚本中静默安装
-npx skills add cuic19053-hue/-skills- -g -a claude-code -y
-```
-
-安装后，`npx skills` 会自动把 skill 链接到你的 Agent 目录（`.claude/skills/`、`.codex/skills/` 等），Agent 启动时即可自动发现和加载。
-
-**查看已安装的 skill：**
-
-```bash
-npx skills list              # 项目级
-npx skills ls -g             # 全局
-npx skills ls -a claude-code # 按 Agent 过滤
-```
-
-**更新：**
-
-```bash
-npx skills update            # 更新全部
-npx skills update national-scholarship  # 更新单个
-```
-
-### 手动安装
-
-如果你不想用 CLI 工具，也可以手动复制：
-
-```bash
-# 克隆仓库
-git clone https://github.com/cuic19053-hue/-skills-.git
-
-# Claude Code（项目级）
-cp -r -skills-/subskills/* .claude/skills/
-
-# Codex
-cp -r -skills-/subskills/* .codex/skills/
-
-# Cursor
-cp -r -skills-/subskills/* .cursor/skills/
-
-# 全局安装以 Claude Code 为例
-cp -r -skills-/subskills/* ~/.claude/skills/
-```
-
-> Cursor 同时支持 `.cursor/skills/`（skills）和 `.cursor/rules/`（rules），不要把 SKILL.md 放到 rules 里，会导致重复加载。
-
----
-
-## 使用方式
-
-Skill 安装后，**不需要记命令**。直接跟 Agent 说人话就行：
-
-```
-"帮我写一份国家奖学金申请书，我是计算机专业大三的"
-"我要申报大创创新训练项目，课题是无人机路径规划"
-"帮我写一份入党申请书"
-```
-
-路由 skill 会自动识别类型。如果不确定，Agent 会反问你是哪种。
-
-生成的内容是 Markdown，如果需要 Word 文档，Agent 会调用 docx 生成工具。
+点击链接 → 浏览器下载 → Word 打开 → 替换成自己的信息。
 
 ---
 
