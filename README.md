@@ -249,7 +249,30 @@ college-application-doc/
 
 **就这么简单，不需要任何技术操作。**
 
-### 方式 B：AI 编程助手一键装（低门槛）
+> ⚠️ **注意**：AI 在聊天框里输出的是纯文本，没有 Word 排版（字体/页边距/表格线等）。如果需要格式完整的文档，建议用下方的**方式 B 直接下载模板**。
+
+### 方式 B：直接下载成品模板（零门槛，推荐）
+
+> 不用复制粘贴，不用跟 AI 对话，直接下载完整的 Word 文档，填入自己的信息即可。
+
+[examples/demos/](https://github.com/cuic19053-hue/-skills-/tree/main/examples/demos) 目录存放了 10 个已经排版好的 demo 文档（含字体、表格、页边距、页眉页脚等完整格式）：
+
+| 下载 | 类型 | 说明 |
+|---|---|---|
+| [📄 国家奖学金申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_national_scholarship.docx) | 奖学金 | 8000 元国奖，前 10% GPA |
+| [📄 入党申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_party_application.docx) | 政治身份 | 4000 字，含入党志愿+认识 |
+| [📄 挑战杯申报书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_challenge_cup.docx) | 竞赛 | 自然科学类学术论文 |
+| [📄 互联网+商业计划书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_internet_plus.docx) | 竞赛 | 创业大赛，2025 新评审维度 |
+| [📄 大创创新训练.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_innovation_research.docx) | 科研 | 国家级，研究报告/论文产出 |
+| [📄 优秀毕业生申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_outstanding_graduate.docx) | 评优 | 省级+校级，四年综合表现 |
+| [📄 院级科研立项.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_college_research.docx) | 科研 | SRTP，含参考文献 |
+| [📄 应征入伍申请书.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_military_enlistment.docx) | 征兵 | 2025 上半年应征 |
+| [📄 CSC 公派留学.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_csc_scholarship.docx) | 公派留学 | 联合培养博士研究生 |
+| [📄 大创创业训练.docx](https://github.com/cuic19053-hue/-skills-/raw/main/examples/demos/demo_entrepreneurship_training.docx) | 科研 | 消防无人机项目（含 18 张表格+技术路线图） |
+
+**使用方法**：点击链接 → 浏览器下载 → 用 Word 打开 → 把内容替换成你自己的信息。
+
+### 方式 C：AI 编程助手一键装（低门槛）
 
 如果你电脑上装了 [Trae](https://www.trae.cn/)、[Cursor](https://cursor.sh/)、[Claude Code](https://claude.ai/code) 等 AI 编程工具：
 
@@ -259,7 +282,7 @@ npx skills add cuic19053-hue/-skills-
 
 装完后直接跟 AI 说"帮我写入党申请书"，它会自动加载对应 skill。
 
-### 方式 C：直接看模板手动套用（纯手工）
+### 方式 D：直接看模板手动套用（纯手工）
 
 1. clone 或下载本仓库
 2. 进入 `subskills/` 找到对应目录
