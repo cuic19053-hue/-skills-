@@ -22,7 +22,7 @@
 
 一套覆盖中国大学生常见申报场景的 Agent Skills。**35 个子 skill**，从大创立项到入党申请书，从奖学金到保研推免，从应征入伍到公派留学。
 
-> 🔔 **下载 WorkBuddy，装上这 35 个 skills，对话就能生成图文并茂的申报书。**
+> 🔔 **下载任意支持 Agent Skills 的工具（如 WorkBuddy），装上这 35 个 skills，对话就能生成图文并茂的申报书。**
 > 不需要克隆、不需要装环境、不需要会编程。技术路线图、甘特图、流程图全部自动生成，输出可直接提交的 Word 文档。
 
 ---
@@ -33,7 +33,7 @@
 
 ChatGPT 可以帮你写，但通用模型不知道"大创"是什么、不知道国家奖学金评审看什么、不知道入党申请书有查重。
 
-这个项目把**高校申报书的领域知识**打包成了 Agent Skills——不是给聊天框里贴一段 prompt，而是让你的 AI 编程助手（Claude Code、Codex、Cursor 等）在需要时自动加载对应的专业知识。
+这个项目把**高校申报书的领域知识**打包成了 Agent Skills——不是给聊天框里贴一段 prompt，而是让支持 Agent Skills 的 AI 工具（WorkBuddy、Claude Code、Codex、Cursor 等）在需要时自动加载对应的专业知识。
 
 ## 能写哪些申报书
 
@@ -187,18 +187,26 @@ college-application-doc/
 
 ## 怎么用（3 步，5 分钟）
 
-### 1. 下载 WorkBuddy（免费）
-[WorkBuddy 官网](https://workbuddy.tencent.com) → 下载安装
+### 1. 挑一个支持 Agent Skills 的工具（免费）
+
+| 工具 | 特点 | 下载 |
+|---|---|---|
+| **WorkBuddy** | 对话生成 .docx，图文并茂 | [官网](https://workbuddy.tencent.com) |
+| **Claude Code** | 终端 AI，开发者首选 | [官网](https://claude.ai/code) |
+| **Codex** | OpenAI 出品，终端 AI | [官网](https://github.com/openai/codex) |
+| **Cursor** | AI 编辑器，内置 Skills 支持 | [官网](https://cursor.sh) |
+
+> 任选一个即可，推荐 WorkBuddy（零基础最友好，直接输出 Word）。
 
 ### 2. 安装这 35 个 skills
-在 WorkBuddy 里搜索 `cuic19053-hue/-skills-`，一键安装全部 35 个赛道
+在工具中搜索或安装 `cuic19053-hue/-skills-`，一键装全部 35 个赛道
 
 ### 3. 开始对话
-直接跟 WorkBuddy 说：
+直接跟 AI 说：
 
 > "帮我写一份大创创新训练申报书，我的课题是无人机路径规划"
 
-WorkBuddy 会自动：
+AI 会自动：
 - 📋 追问你缺少的信息（排名？指导老师？预算？）
 - ✍️ 生成申报书正文
 - 📊 生成 Mermaid 图表（技术路线图 + 甘特图 + 流程图）
@@ -208,13 +216,13 @@ WorkBuddy 会自动：
 
 ### 备选：网页 AI 直接用（不用装任何软件）
 
-如果你不想装 WorkBuddy，也可以直接用网页 AI：
+如果你不想装任何工具，也可以直接用网页 AI：
 
 1. 打开 [豆包](https://doubao.com)、[DeepSeek](https://chat.deepseek.com)、[Claude](https://claude.ai) 等
 2. 在 [subskills/](./subskills/README.md) 找到你需要的赛道，复制 `SKILL.md` 全部内容
 3. 粘贴到 AI 对话框，说"我要申请 xxx，请按这个 skill 帮我写"
 
-> ⚠️ 网页 AI 输出纯文本，不包含图片和 Word 排版。如果需要图文并茂的文档，建议用 WorkBuddy。
+> ⚠️ 网页 AI 输出纯文本，不包含图片和 Word 排版。图文并茂的文档需要用支持 Agent Skills 的工具。
 
 ### 备选：直接下载成品模板
 
